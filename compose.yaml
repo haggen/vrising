@@ -1,0 +1,12 @@
+services:
+  srv:
+    build: .
+    restart: always
+    stop_signal: SIGINT
+    ports:
+      - 9876:9876/udp
+      - 9877:9877/udp
+    volumes:
+      - ./config:/mnt/AppData/Settings:ro
+    command:
+      - -persistentDataPath /mnt/AppData
