@@ -2,10 +2,11 @@ services:
   srv:
     build: .
     restart: always
-        ports:
+    ports:
       - 9876:9876/udp
       - 9877:9877/udp
     volumes:
       - ./config:/mnt/AppData/Settings
     command:
-      - -persistentDataPath /mnt/AppData
+      - -persistentDataPath
+      - /mnt/AppData
