@@ -10,12 +10,20 @@
 
 ## Recipes
 
-### Export game world data
+### Export saved data
 
-Generate a tarball with the data then move it to a safe location.
+Generate a tarball with the contents of `/mnt/AppData`.
 
 ```sh
-docker compose cp srv:/mnt/AppData - > VRisingDedicatedServer-AppData-$(date -u +"%Y%m%d%H%M%S").tar
+docker compose cp srv:/mnt/AppData/. - > VRisingDedicatedServer-AppData-$(date +"%s").tar
+```
+
+### Import saved data
+
+Extract the tarball into the container.
+
+```sh
+docker compose cp - srv:/mnt/AppData < AppData.tar
 ```
 
 ## References
