@@ -3,7 +3,7 @@ FROM steamcmd/steamcmd:ubuntu-22
 
 # Update everything and install dependencies.
 RUN apt-get update && apt-get upgrade -y \
-    && apt-get install -y dumb-init xvfb wine \
+    && apt-get install -y dumb-init xvfb winbind wine \
     && apt-get clean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
