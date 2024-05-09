@@ -2,8 +2,7 @@ services:
   srv:
     build: .
     restart: always
-    stop_signal: SIGINT
-    ports:
+        ports:
       - 9876:9876/udp
       - 9877:9877/udp
     volumes:
