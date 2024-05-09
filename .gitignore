@@ -2,4 +2,4 @@
 .env
 
 # Ignore server config. files.
-# /config/*
+/config/*
