@@ -8,11 +8,12 @@ RUN apt-get update && apt-get upgrade -y \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
 
+# Install game's dedicated server.
+# Forced installation directory must be absolute.
+RUN steamcmd +@sSteamCmdForcePlatformType windows +force_install_dir /mnt/VRisingDedicatedServer +login anonymous +app_update 1829350 +quit
+
 # Change working directory.
 WORKDIR /mnt/VRisingDedicatedServer
-
-# Install game's dedicated server.
-RUN steamcmd +@sSteamCmdForcePlatformType windows +force_install_dir . +login anonymous +app_update 1829350 +quit
 
 # Mountpoint for saved data.
 VOLUME ["/mnt/AppData"]
