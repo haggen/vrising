@@ -3,7 +3,7 @@
 # Error on undefined. Halt on error.
 set -ue
 
-# If arguments being with a dash, we're launching the server, otherwise we're running a command.
+# If arguments begin with a dash, we're passing arguments to the server, otherwise we're running a command.
 case "${1-}" in
 	-*|"")
 		;;
@@ -17,4 +17,4 @@ export SteamAppId="1829350"
 
 # Start the server.
 # We us xvfb to initialize a virtual display and wine to execute the Windows binary.
-dumb-init xvfb-run wine64 ./VRisingServer.exe "$@"
+xvfb-run wine ./VRisingServer.exe "$@"
