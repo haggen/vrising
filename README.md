@@ -5,19 +5,18 @@
 ## Usage
 
 1. Clone the repository.
-2. Run `docker compose up`.
+2. Edit configuration files at `./config` accordingly.
+3. Run `docker compose up`.
 
 ## Recipes
 
 ### Export game world data
 
-Generate a tarball with the data.
+Generate a tarball with the data then move it to a safe location.
 
 ```sh
-docker compose cp srv:/vrising/AppData - > AppData-$(date -u +"%Y%m%d%H%M%S").tar
+docker compose cp srv:/mnt/AppData - > VRisingDedicatedServer-AppData-$(date -u +"%Y%m%d%H%M%S").tar
 ```
-
-Then move the tarball to a safe location.
 
 ## References
 
