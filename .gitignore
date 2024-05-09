@@ -1,5 +1,3 @@
 # Ignore local enviroment.
 .env
 
-# Ignore server config. files.
-/config/*

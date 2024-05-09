@@ -10,6 +10,20 @@
 
 ## Recipes
 
+### Ignore configuration changes
+
+Run:
+
+```sh
+git update-index --assume-unchanged config
+```
+
+Later, to undo:
+
+```sh
+git update-index --no-assume-unchanged config
+```
+
 ### Export saved data
 
 Generate a tarball with the contents of `/mnt/AppData`.
